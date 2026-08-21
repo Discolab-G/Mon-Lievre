@@ -29,7 +29,7 @@ Trois façons d'utiliser Mon Lièvre, de la plus simple à la plus complète :
 
 ### 1. En ligne (recommandé)
 
-Ouvre directement l'app à cette adresse : **[à compléter — lien GitHub Pages]**
+Ouvre directement l'app à cette adresse : (https://discolab-g.github.io/Mon-Lievre/)
 → Fonctionne hors-ligne après un premier chargement, installable sur mobile (« Ajouter à l'écran d'accueil ») et sur ordinateur.
 
 ### 2. En local, sans rien installer
