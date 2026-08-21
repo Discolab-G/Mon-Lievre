@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mon Lièvre — Planche pictogrammes de séance (validation)</title>
+<style>
+  :root{ --fd: Georgia, 'Times New Roman', serif; --fu: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  body{ margin:0; padding:28px 20px 60px; background:#DDD6C6; font-family:var(--fu); color:#16323F; }
+  .wrap{ max-width:1160px; margin:0 auto; }
+  h1{ font-family:var(--fd); font-weight:600; font-size:30px; margin:0 0 4px; }
+  .sub{ color:#5a6b74; margin:0 0 26px; font-size:14.5px; }
+  h2{ font-family:var(--fd); font-weight:600; font-size:20px; margin:34px 0 4px; }
+  .note{ font-size:13.5px; color:#5a6b74; margin:0 0 12px; max-width:860px; }
+  .pair{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:880px){ .pair{ grid-template-columns:1fr; } }
+  .panel{ border-radius:16px; padding:18px; background:var(--bg); color:var(--text); border:1px solid rgba(0,0,0,.06); }
+  .panel .tag{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
+
+  /* ===== valeurs EXACTES de l'app + familles proposées ===== */
+  .t-light{ --bg:#F4EFE3; --surface:#FBF8F1; --surface2:#EFE7D6; --text:#16323F; --muted:#6B7E88;
+    --line:#E5DECD; --line-strong:#D8CFBA; --accent:#E0792F; --accent-soft:#FBE4D3;
+    --endu:#16323F; --endu-soft:#E3E8EA; --qual:#E0792F; --qual-soft:#FBE4D3;
+    --struct:#A8502C; --struct-soft:#F4DFD2; --recup:#5F7F62; --recup-soft:#E4ECE3;
+    --off:#6B7E88; --off-soft:#EBE9E0; }
+  .t-dark{ --bg:#0E242E; --surface:#16323F; --surface2:#1E3A4C; --text:#F2ECDE; --muted:#A7BAC3;
+    --line:#294655; --line-strong:#335162; --accent:#F0954A; --accent-soft:#3A2C1F;
+    --endu:#7FB9E0; --endu-soft:#1B3C50; --qual:#F0954A; --qual-soft:#3A2C1F;
+    --struct:#D9906A; --struct-soft:#3B2B21; --recup:#96BA9E; --recup-soft:#21392B;
+    --off:#97A5AC; --off-soft:#26353C; }
+
+  /* ===== composants de démonstration ===== */
+  .fam-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .fam{ display:flex; align-items:center; gap:9px; background:var(--surface); border:1px solid var(--line);
+    border-radius:12px; padding:9px 12px; }
+  .fam .dot{ width:14px; height:14px; border-radius:5px; }
+  .fam b{ font-size:13.5px; font-weight:600; }
+  .fam span{ font-size:12px; color:var(--muted); }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:10px; }
+  .cell{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:12px 10px; text-align:center; }
+  .cell .nm{ font-size:13px; font-weight:600; margin-top:8px; }
+  .cell .ds{ font-size:11.5px; color:var(--muted); margin-top:1px; }
+  .cell .sizes{ margin-top:9px; display:flex; justify-content:center; align-items:flex-end; gap:9px; }
+
+  .pastille{ display:inline-grid; place-items:center; border-radius:11px; }
+  .p44{ width:44px; height:44px; } .p34{ width:34px; height:34px; border-radius:10px; } .p30{ width:30px; height:30px; border-radius:9px; }
+
+  .rows{ display:flex; flex-direction:column; gap:9px; }
+  .prow{ display:flex; align-items:center; gap:11px; background:var(--surface); border:1px solid var(--line);
+    border-radius:13px; padding:11px 13px; }
+  .prow .grow{ flex:1; min-width:0; }
+  .prow .t1{ font-size:14.5px; font-weight:600; }
+  .prow .t2{ font-size:12.5px; color:var(--muted); margin-top:1px; }
+  .prow .when{ font-size:12px; color:var(--muted); text-align:right; }
+
+  .today{ background:var(--surface); border:1.5px solid var(--accent); border-radius:16px; padding:15px; display:flex; gap:13px; align-items:center; }
+  .today .t1{ font-family:var(--fd); font-size:19px; font-weight:600; }
+  .today .t2{ font-size:13px; color:var(--muted); margin-top:2px; }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{ display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line); background:var(--surface);
+    color:var(--text); border-radius:999px; padding:8px 13px; font-size:13.5px; }
+  .chip.on{ border-color:var(--accent); background:var(--accent-soft); font-weight:600; }
+
+  .tiles{ display:flex; flex-direction:column; gap:10px; max-width:420px; }
+  .tile{ display:flex; align-items:center; gap:13px; background:var(--surface); border:1px solid var(--line);
+    border-radius:16px; padding:14px 15px; }
+  .tile .ico{ width:42px; height:42px; border-radius:12px; display:grid; place-items:center; }
+  .tile .tt{ font-weight:600; font-size:15px; } .tile .ts{ font-size:12.5px; color:var(--muted); }
+
+  .ab{ display:flex; gap:12px; flex-wrap:wrap; }
+  .ab .opt{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:13px 15px;
+    display:flex; align-items:center; gap:12px; }
+  .ab .opt b{ font-size:13.5px; }
+  .ab .opt small{ display:block; color:var(--muted); font-size:11.5px; }
+  .reco{ font-size:11px; color:var(--qual); font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Pictogrammes de séance — planche de validation</h1>
+  <p class="sub">Point 5 · à valider avant intégration. Style identique aux icônes de l'app (trait 1.8, bouts ronds, 24×24). Polices d'app non embarquées ici — seuls comptent les glyphes et les couleurs.</p>
+  <div id="root"></div>
+</div>
+
+<script>
+/* ===== pictogrammes proposés (mêmes conventions que svg() de l'app) ===== */
+const PIC = {
+  easy:    '<path d="M4 18c4.5 0 4.5-4 9-4s4.5-4 8-4" stroke-dasharray="0.1 4.6"/>',
+  easyB:   '<path d="M3 14c3-4.5 6-4.5 9 0s6 4.5 9 0"/>',
+  long:    '<path d="M4 19c7 0 .5-7 7.5-7s.5-7 8.5-7"/><circle cx="4" cy="19" r="1.35" fill="currentColor" stroke="none"/><circle cx="20" cy="5" r="1.35" fill="currentColor" stroke="none"/>',
+  tempo:   '<path d="M5 17.5a8 8 0 0 1 14 0"/><path d="M12 17.5l3.8-5.2"/><circle cx="12" cy="17.5" r="1.25" fill="currentColor" stroke="none"/>',
+  intervals:'<path d="M5.2 19v-7M9.7 19V5.5M14.3 19v-7M18.8 19V5.5"/>',
+  cotes:   '<path d="M3 18l4.5-7 4.5 7"/><path d="M12 18l4.5-7 4.5 7"/>',
+  renfo:   '<path d="M7 7.5v9M17 7.5v9M4 10v4M20 10v4M7 12h10"/>',
+  rando:   '<rect x="7" y="8" width="10" height="12" rx="3"/><path d="M9.5 8V6a2.5 2.5 0 0 1 5 0v2M7 14.5h10"/>',
+  recovery:'<path d="M12 21C5.5 16.5 5 8.5 12 3c7 5.5 6.5 13.5 0 18z"/><path d="M12 18.5V7.5"/>',
+  rest:    '<path d="M20.2 13.4A8.4 8.4 0 1 1 10.6 3.8a6.6 6.6 0 0 0 9.6 9.6z"/>',
+  autre:   '<path d="M13 3L6.5 13.5H11l-1.2 7.5L17 10.5h-4.5z"/>',
+  /* menus (hub) */
+  hubObj:  '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/>',
+  hubCadre:'<path d="M4 7h16M4 12h16M4 17h16"/><circle cx="15" cy="7" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="12" r="2" fill="currentColor" stroke="none"/><circle cx="13" cy="17" r="2" fill="currentColor" stroke="none"/>',
+  hubProf: '<circle cx="12" cy="8" r="3.4"/><path d="M5.5 19.5a6.5 6.5 0 0 1 13 0"/>',
+  hubImp:  '<path d="M12 4v9M8.5 9.5L12 13l3.5-3.5"/><path d="M4.5 16.5V18a2.5 2.5 0 0 0 2.5 2.5h10A2.5 2.5 0 0 0 19.5 18v-1.5"/>'
+};
+function pic(name,size,color){ return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color||'currentColor'}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PIC[name]}</svg>`; }
+function past(name,famv,size,cls){ return `<span class="pastille ${cls}" style="background:var(--${famv}-soft);color:var(--${famv})">${pic(name,size)}</span>`; }
+
+/* familles : la couleur raconte le canal dominant de la Méthodologie */
+const FAMS = [
+  {v:'endu',  lab:'Endurance',   sub:'base aérobie — footing, sortie longue'},
+  {v:'qual',  lab:'Qualité',     sub:'canal physiologique — tempo, fractionné'},
+  {v:'struct',lab:'Relief & structurel', sub:'canal structurel — côtes, renfo, rando'},
+  {v:'recup', lab:'Récupération',sub:'régénération active'},
+  {v:'off',   lab:'Repos & hors course', sub:'repos, charges autres sports'}
+];
+const TYPES = [
+  {id:'easy',     lab:'Footing',      fam:'endu',  ds:'sentier pointillé'},
+  {id:'long',     lab:'Sortie longue',fam:'endu',  ds:'chemin qui serpente'},
+  {id:'tempo',    lab:'Tempo',        fam:'qual',  ds:'jauge d\u2019allure'},
+  {id:'intervals',lab:'Fractionné',   fam:'qual',  ds:'répétitions'},
+  {id:'cotes',    lab:'Côtes',        fam:'struct',ds:'collines répétées'},
+  {id:'renfo',    lab:'Renforcement', fam:'struct',ds:'haltère'},
+  {id:'rando',    lab:'Rando-course', fam:'struct',ds:'sac à dos'},
+  {id:'recovery', lab:'Récupération', fam:'recup', ds:'feuille'},
+  {id:'rest',     lab:'Repos',        fam:'off',   ds:'lune'},
+  {id:'autre',    lab:'Autre sport',  fam:'off',   ds:'éclair de charge'}
+];
+const famOf = id => TYPES.find(t=>t.id===id).fam;
+
+function sections(){
+  let h='';
+
+  h+=`<h2>1 · La logique de couleur : le canal dominant</h2>
+  <p class="note">Cinq familles, directement dérivées de la méthodologie double-canal : l'orange marque ce qui charge le <b>souffle</b>, la terre cuite ce qui charge les <b>jambes</b> (impact, excentrique), le navy l'endurance de base, la sauge la récupération, le gris le repos et le hors-course. La couleur devient une information, pas une décoration.</p>
+  <div class="pair">`+ panel(p=>`
+    <div class="fam-row">${FAMS.map(f=>`<div class="fam"><span class="dot" style="background:var(--${f.v})"></span><span><b>${f.lab}</b><br><span>${f.sub}</span></span></div>`).join('')}</div>`)+`</div>`;
+
+  h+=`<h2>2 · Les dix pictogrammes</h2>
+  <p class="note">Chaque type en pastille 44 px (cartes, sélecteur) puis nu en 20 et 16 px (listes denses). Trait, angles et rondeur identiques aux icônes existantes de l'app.</p>
+  <div class="pair">`+ panel(p=>`
+    <div class="grid">${TYPES.map(t=>`<div class="cell">
+      ${past(t.id,t.fam,26,'p44')}
+      <div class="nm">${t.lab}</div><div class="ds">${t.ds}</div>
+      <div class="sizes" style="color:var(--${t.fam})">${pic(t.id,20)}${pic(t.id,16)}</div>
+    </div>`).join('')}</div>`)+`</div>`;
+
+  h+=`<h2>3 · En contexte — programme, aujourd'hui, sélecteur, journal</h2>
+  <p class="note">Maquettes fidèles aux composants réels. Reco d'usage : pastille sur la carte du jour et les rangées de liste ; glyphe nu dans le sélecteur de type (déjà des chips) et les endroits très denses.</p>
+  <div class="pair">`+ panel(p=>`
+    <div class="today">${past('long','endu',26,'p44')}<div><div class="t1">Sortie longue — 18 km</div><div class="t2">520 m D+ · en aisance, ravito à mi-parcours</div></div></div>
+    <div style="height:12px"></div>
+    <div class="rows">
+      <div class="prow">${past('intervals','qual',20,'p34')}<div class="grow"><div class="t1">Fractionné</div><div class="t2">6 × 400 m · récup 1 min 30</div></div><div class="when">mar.<br>7 juil.</div></div>
+      <div class="prow">${past('cotes','struct',20,'p34')}<div class="grow"><div class="t1">Côtes</div><div class="t2">8 × 45 s en montée · retour trot</div></div><div class="when">jeu.<br>9 juil.</div></div>
+      <div class="prow">${past('recovery','recup',20,'p34')}<div class="grow"><div class="t1">Récupération</div><div class="t2">25 min très facile</div></div><div class="when">ven.<br>10 juil.</div></div>
+    </div>
+    <div style="height:14px"></div>
+    <div class="chips">
+      ${['easy','long','tempo','intervals','cotes'].map((k,i)=>`<span class="chip ${k==='tempo'?'on':''}"><span style="color:var(--${famOf(k)})">${pic(k,16)}</span>${TYPES.find(t=>t.id===k).lab}</span>`).join('')}
+    </div>
+    <div style="height:14px"></div>
+    <div class="rows">
+      <div class="prow">${past('easy','endu',18,'p30')}<div class="grow"><div class="t1">Footing · 8,2 km</div><div class="t2">45 min · ressenti 2/5</div></div><div class="when">hier</div></div>
+      <div class="prow">${past('autre','off',18,'p30')}<div class="grow"><div class="t1">Kite · 2 h 10</div><div class="t2">charge 320 UA</div></div><div class="when">dim.</div></div>
+    </div>`)+`</div>`;
+
+  h+=`<h2>4 · Les menus : tuiles du hub</h2>
+  <p class="note">Glyphes dédiés (cible, curseurs, profil, import) et déclinaison de couleur par tuile — même famille visuelle que les séances. Alternative sobre possible : tout en orange accent, comme aujourd'hui.</p>
+  <div class="pair">`+ panel(p=>`
+    <div class="tiles">
+      ${[['hubObj','qual','Objectif','Objectif précis · 10 km · 14 mars'],
+         ['hubCadre','endu','Cadrage','3 sorties · 5 h/sem max'],
+         ['hubProf','recup','Profil','25 km/sem · VMA 15'],
+         ['hubImp','struct','Import Strava','Optionnel · GPX / TCX / FIT']]
+        .map(([ic,f,t,s])=>`<div class="tile"><span class="ico" style="background:var(--${f}-soft);color:var(--${f})">${pic(ic,22)}</span><div><div class="tt">${t}</div><div class="ts">${s}</div></div></div>`).join('')}
+    </div>`)+`</div>`;
+
+  h+=`<h2>5 · Variante à trancher : le footing</h2>
+  <p class="note">Le glyphe le plus fréquent de l'app — deux lectures possibles.</p>
+  <div class="pair">`+ panel(p=>`
+    <div class="ab">
+      <div class="opt">${past('easy','endu',26,'p44')}<span><b>A — Le sentier pointillé</b> <span class="reco">· retenu</span><small>évoque la trace, le chemin — choix validé</small></span></div>
+      <div class="opt">${past('easyB','endu',26,'p44')}<span><b>B — La vague</b><small>alternative écartée</small></span></div>
+    </div>`)+`</div>`;
+
+  return h;
+}
+function panel(inner){
+  return `<div class="panel t-light"><p class="tag">Thème clair</p>${inner('light')}</div>
+          <div class="panel t-dark"><p class="tag">Thème sombre</p>${inner('dark')}</div>`;
+}
+document.getElementById('root').innerHTML = sections();
+</script>
+</body>
+</html>
