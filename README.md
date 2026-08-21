@@ -29,7 +29,7 @@ Trois façons d'utiliser Mon Lièvre, de la plus simple à la plus complète :
 
 ### 1. En ligne (recommandé)
 
-Ouvre directement l'app à cette adresse : (https://discolab-g.github.io/Mon-Lievre/)
+Ouvre directement l'app à cette adresse : **[à compléter — lien GitHub Pages]**
 → Fonctionne hors-ligne après un premier chargement, installable sur mobile (« Ajouter à l'écran d'accueil ») et sur ordinateur.
 
 ### 2. En local, sans rien installer
@@ -56,7 +56,7 @@ Par défaut, Mon Lièvre fonctionne en **mode local gratuit** : le moteur intég
 3. Colle-la dans **Réglages → Clé API** de l'app
 4. Choisis ton modèle (Sonnet 4.6 ou Haiku 4.5, selon ton budget)
 
-Le guide illustré pas-à-pas (création du compte, génération et suppression de la clé, suppression des données…) est disponible dans **[`Tuto_éveil_du_Lièvre.pdf`](./Tuto_éveil_du_Lièvre.pdf)**.
+Le guide illustré pas-à-pas (création du compte, génération et suppression de la clé, suppression des données…) est disponible dans **[`Tuto_éveil_du_Lièvre.pdf`](./doc/Tuto_éveil_du_Lièvre.pdf)**.
 
 ⚠️ Ta clé API est facturée directement par Anthropic à l'usage (voir leurs [tarifs](https://www.anthropic.com/pricing)) ; Mon Lièvre ne prend aucune commission et ne voit jamais ta clé transiter ailleurs que dans ton propre navigateur.
 
@@ -78,7 +78,7 @@ Import possible fichier par fichier, ou en une fois via une archive `.zip`. Tout
 
 **En une phrase : par défaut, rien ne quitte ton appareil.** La seule information qui sort de ton navigateur est celle envoyée à l'API Claude si tu choisis d'activer le Coach IA — et uniquement ce qui est nécessaire pour répondre à ta question, au moment où tu la poses.
 
-Le détail complet (ce qui est transmis, ce qui ne l'est jamais, et pourquoi) est expliqué sans jargon dans **[`Mon_Lièvre_données_et_API.pdf`](./Mon_Lièvre_données_et_API.pdf)**.
+Le détail complet (ce qui est transmis, ce qui ne l'est jamais, et pourquoi) est expliqué sans jargon dans **[`Mon_Lièvre_données_et_API.pdf`](./doc/Mon_Lièvre_données_et_API.pdf)**.
 
 ## Documentation du projet
 
@@ -86,9 +86,9 @@ Le détail complet (ce qui est transmis, ce qui ne l'est jamais, et pourquoi) es
 |---|---|---|
 | **[Mon_Lièvre_données_et_API.pdf](./doc/Mon_Lièvre_données_et_API.pdf)** | Tout le monde | Ce qui est stocké, ce qui est transmis à l'IA, ce qui ne l'est jamais — écrit sans jargon. |
 | **[Tuto_éveil_du_Lièvre.pdf](./doc/Tuto_éveil_du_Lièvre.pdf)** | Qui veut activer le Coach IA | Guide pas-à-pas : créer un compte Claude Console, générer / ajouter / supprimer une clé API, supprimer les données de l'app. |
-| **[Mon_Lièvre__Méthodologie.pdf](./doc/Mon_Lièvre_Méthodologie.pdf)** | Coureurs curieux & développeurs | Système de charge (ACWR, monotonie), logique du moteur de programme, lecture des indicateurs — texte pédagogique + blocs techniques détaillés. |
+| **[Mon_Lièvre_Méthodologie.pdf](./doc/Mon_Lièvre_Méthodologie.pdf)** | Coureurs curieux & développeurs | Système de charge (ACWR, monotonie), logique du moteur de programme, lecture des indicateurs — texte pédagogique + blocs techniques détaillés. |
 | **[Questions_réponses.md](./doc/Questions_réponses.md)** | Développeurs / contributeurs | Base de connaissances qui alimente les réponses du Coach IA (méthodologie, matériel, nutrition, récupération, psychologie, santé). |
-| **[Mon_Lievre_Coach_BYOK_Cahier_des_charges_docx.pdf](./doc/Mon_Lievre_Coach_BYOK_Cahier_des_charges_docx.pdf)** | Développeurs / contributeurs | Cahier des charges du Coach & du mode BYOK — document de conception pour de futures évolutions, pas encore implémenté. |
+| **[Mon_Lievre_Coach_BYOK_Cahier_des_charges.docx.pdf](./doc/Mon_Lievre_Coach_BYOK_Cahier_des_charges.docx.pdf)** | Développeurs / contributeurs | Cahier des charges du Coach & du mode BYOK — document de conception pour de futures évolutions, pas encore implémenté. |
 
 ## Pour les développeurs
 
@@ -97,7 +97,7 @@ Le détail complet (ce qui est transmis, ce qui ne l'est jamais, et pourquoi) es
 - **Hors-ligne** : `sw.js` (Service Worker, cache-first) + `manifest.webmanifest` pour l'installation en PWA.
 - **IA** : appels directs au endpoint `/v1/messages` de l'API Anthropic depuis le navigateur (`anthropic-dangerous-direct-browser-access`), aucun serveur intermédiaire.
 - **Constantes à personnaliser** en tête de `index.html` si tu forkes le projet : `DOCS_URL` (lien vers le guide d'installation du coach), `PRIVACY_URL` (lien vers la doc données & IA), `DONATE_URL` (optionnel).
-- `planche-pictogrammes.html` est un outil interne de validation visuelle (palette de couleurs par famille de séance) — pas une page destinée aux utilisateurs finaux.
+- `doc/planche-pictogrammes.html` est un outil interne de validation visuelle (palette de couleurs par famille de séance) — pas une page destinée aux utilisateurs finaux.
 
 Contributions, suggestions et retours bienvenus via les *issues* du dépôt.
 
