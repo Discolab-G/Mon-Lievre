@@ -84,11 +84,11 @@ Le détail complet (ce qui est transmis, ce qui ne l'est jamais, et pourquoi) es
 
 | Document | Pour qui ? | Contenu |
 |---|---|---|
-| **[Mon_Lièvre_données_et_API.pdf](./Mon_Lièvre_données_et_API.pdf)** | Tout le monde | Ce qui est stocké, ce qui est transmis à l'IA, ce qui ne l'est jamais — écrit sans jargon. |
-| **[Tuto_éveil_du_Lièvre.pdf](./Tuto_éveil_du_Lièvre.pdf)** | Qui veut activer le Coach IA | Guide pas-à-pas : créer un compte Claude Console, générer / ajouter / supprimer une clé API, supprimer les données de l'app. |
-| **[Mon_Lièvre__Méthodologie.pdf](./Mon_Lièvre__Méthodologie.pdf)** | Coureurs curieux & développeurs | Système de charge (ACWR, monotonie), logique du moteur de programme, lecture des indicateurs — texte pédagogique + blocs techniques détaillés. |
-| **[Questions_réponses.md](./Questions_réponses.md)** | Développeurs / contributeurs | Base de connaissances qui alimente les réponses du Coach IA (méthodologie, matériel, nutrition, récupération, psychologie, santé). |
-| **[Mon_Lievre_Coach_BYOK_Cahier_des_charges_docx.pdf](./Mon_Lievre_Coach_BYOK_Cahier_des_charges_docx.pdf)** | Développeurs / contributeurs | Cahier des charges du Coach & du mode BYOK — document de conception pour de futures évolutions, pas encore implémenté. |
+| **[Mon_Lièvre_données_et_API.pdf](./doc/Mon_Lièvre_données_et_API.pdf)** | Tout le monde | Ce qui est stocké, ce qui est transmis à l'IA, ce qui ne l'est jamais — écrit sans jargon. |
+| **[Tuto_éveil_du_Lièvre.pdf](./doc/Tuto_éveil_du_Lièvre.pdf)** | Qui veut activer le Coach IA | Guide pas-à-pas : créer un compte Claude Console, générer / ajouter / supprimer une clé API, supprimer les données de l'app. |
+| **[Mon_Lièvre__Méthodologie.pdf](./doc/Mon_Lièvre__Méthodologie.pdf)** | Coureurs curieux & développeurs | Système de charge (ACWR, monotonie), logique du moteur de programme, lecture des indicateurs — texte pédagogique + blocs techniques détaillés. |
+| **[Questions_réponses.md](./doc/Questions_réponses.md)** | Développeurs / contributeurs | Base de connaissances qui alimente les réponses du Coach IA (méthodologie, matériel, nutrition, récupération, psychologie, santé). |
+| **[Mon_Lievre_Coach_BYOK_Cahier_des_charges_docx.pdf](./doc/Mon_Lievre_Coach_BYOK_Cahier_des_charges_docx.pdf)** | Développeurs / contributeurs | Cahier des charges du Coach & du mode BYOK — document de conception pour de futures évolutions, pas encore implémenté. |
 
 ## Pour les développeurs
 
