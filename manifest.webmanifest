@@ -1,0 +1,15 @@
+{
+  "name": "Mon Lièvre",
+  "short_name": "Mon Lièvre",
+  "description": "Ton compagnon de course à pied et de trail — chaque sortie compte.",
+  "lang": "fr",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F4EFE3",
+  "theme_color": "#16323F",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
